@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<resource version="2.3.0.1">
+    <object class="wxFrame" name="MainFrame">
+        <title>Journal App</title>
+    </object>
+</resource>
