@@ -101,8 +101,8 @@
               <object class="wxGridBagSizer" name="gbSizer2">
                 <vgap>10</vgap>
                 <hgap>10</hgap>
-                <growablerows>2</growablerows>
-                <growablecols>2</growablecols>
+                <growablerows>0</growablerows>
+                <growablecols>0</growablecols>
                 <object class="sizeritem">
                   <flag>wxEXPAND</flag>
                   <border>5</border>
