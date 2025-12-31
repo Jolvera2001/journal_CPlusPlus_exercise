@@ -28,7 +28,7 @@ add_executable(journalApp WIN32
     main.cpp
     JournalApp.cpp
     JournalFrame.cpp
-    JournalPanel.cpp
+    JournalPanels.cpp
 )
 
 target_link_libraries(journalApp

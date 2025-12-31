@@ -1,4 +1,4 @@
-#include "JournalPanel.h"
+#include "JournalPanels.h"
 
 JournalPanel::JournalPanel(wxWindow *parent) : wxPanel(parent)
 {
@@ -9,3 +9,10 @@ JournalPanel::JournalPanel(wxWindow *parent) : wxPanel(parent)
 
     this->SetSizer(vBox);
 }
+
+SettingsPanel::SettingsPanel(wxWindow *parent) : wxPanel(parent)
+{
+    auto vBox = new wxBoxSizer(wxVERTICAL);
+
+    this->SetSizer(vBox);
+};
