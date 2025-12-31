@@ -6,6 +6,10 @@ EditorPanel::EditorPanel(wxWindow *frame)
     contentEntry = XRCCTRL(*frame, "ContentEntry", wxTextCtrl);
 }
 
+HistoryPanel::HistoryPanel(wxWindow *frame)
+{
+}
+
 SettingsPanel::SettingsPanel(wxWindow *frame)
 {
     dirPicker = XRCCTRL(*frame, "EntryDirPicker", wxDirPickerCtrl);

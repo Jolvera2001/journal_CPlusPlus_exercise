@@ -37,6 +37,7 @@ target_link_libraries(journalApp
     wxbase32u${WX_SUFFIX}
     wxmsw32u${WX_SUFFIX}_xrc
     wxbase32u${WX_SUFFIX}_xml
+    wxmsw32u${WX_SUFFIX}_html
     wxpng${WX_SUFFIX}
     wxjpeg${WX_SUFFIX}
     wxtiff${WX_SUFFIX}
