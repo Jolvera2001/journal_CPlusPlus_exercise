@@ -17,13 +17,19 @@ endif()
 include_directories(
     "${WXWIN}/include"
     "${WXWIN}/lib/vc_x64_lib/${WX_CONFIG}"
+    "${CMAKE_SOURCE_DIR}"
 )
 
 link_directories("${WXWIN}/lib/vc_x64_lib")
 
 add_definitions(-D__WXMSW__ -DUNICODE -D_UNICODE)
 
-add_executable(journalApp WIN32 main.cpp)
+add_executable(journalApp WIN32 
+    main.cpp
+    JournalApp.cpp
+    JournalFrame.cpp
+    JournalPanel.cpp
+)
 
 target_link_libraries(journalApp
     wxmsw32u${WX_SUFFIX}_core

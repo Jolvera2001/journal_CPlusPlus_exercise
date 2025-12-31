@@ -1,4 +1,5 @@
 #include "JournalApp.h"
+#include "JournalFrame.h"
 
 bool JournalApp::OnInit()
 {
