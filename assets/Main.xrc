@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.5.3.0">
+  <object class="wxFrame" name="MainFrame">
+    <size>900,600</size>
+    <style>wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL</style>
+    <title></title>
+    <centered>1</centered>
+    <aui_managed>0</aui_managed>
+    <object class="wxMenuBar" name="MenuBar">
+      <object class="wxMenu" name="JournalMenuItem">
+        <label>Journal</label>
+        <object class="wxMenuItem" name="HelloWorldSubItem">
+          <label>Hello World!</label>
+          <accel>Ctrl+H</accel>
+          <help></help>
+        </object>
+        <object class="separator"/>
+        <object class="wxMenuItem" name="ExitSubItem">
+          <label>Exit</label>
+          <accel>Ctrl+Shift+P</accel>
+          <help></help>
+        </object>
+      </object>
+      <object class="wxMenu" name="AboutMenuItem">
+        <label>About</label>
+        <object class="wxMenuItem" name="InfoSubItem">
+          <label>Info</label>
+          <accel>Ctrl+I</accel>
+          <help></help>
+        </object>
+      </object>
+    </object>
+    <object class="wxNotebook" name="MainNotebook">
+      <object class="notebookpage">
+        <label>Editor</label>
+        <selected>1</selected>
+        <object class="wxPanel" name="EditorPanel">
+          <style>wxTAB_TRAVERSAL</style>
+          <object class="wxBoxSizer" name="EditorSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>1</option>
+              <object class="wxBoxSizer" name="Editor_HBox">
+                <orient>wxHORIZONTAL</orient>
+                <object class="sizeritem">
+                  <flag>wxALIGN_CENTER|wxALL</flag>
+                  <border>10</border>
+                  <option>0</option>
+                  <object class="wxStaticText" name="TitleLabel">
+                    <label>Title:</label>
+                    <wrap>-1</wrap>
+                  </object>
+                </object>
+                <object class="sizeritem">
+                  <flag>wxALIGN_CENTER|wxALL</flag>
+                  <border>5</border>
+                  <option>2</option>
+                  <object class="wxTextCtrl" name="TitleEntry">
+                    <value></value>
+                    <maxlength>0</maxlength>
+                  </object>
+                </object>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL|wxEXPAND</flag>
+              <border>5</border>
+              <option>8</option>
+              <object class="wxTextCtrl" name="ContentEntry">
+                <style>wxTE_MULTILINE|wxTE_WORDWRAP</style>
+                <value></value>
+                <maxlength>0</maxlength>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object class="notebookpage">
+        <label>History</label>
+        <selected>0</selected>
+        <object class="wxPanel" name="HistoryPanel">
+          <style>wxTAB_TRAVERSAL</style>
+          <object class="wxBoxSizer" name="HistorySizer">
+            <orient>wxVERTICAL</orient>
+          </object>
+        </object>
+      </object>
+      <object class="notebookpage">
+        <label>Settings</label>
+        <selected>0</selected>
+        <object class="wxPanel" name="SettingsPanel">
+          <style>wxTAB_TRAVERSAL</style>
+          <object class="wxBoxSizer" name="SettingsSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+              <flag>wxALL|wxEXPAND</flag>
+              <border>5</border>
+              <option>1</option>
+              <object class="wxGridBagSizer" name="gbSizer2">
+                <vgap>10</vgap>
+                <hgap>10</hgap>
+                <growablerows>2</growablerows>
+                <growablecols>2</growablecols>
+                <object class="sizeritem">
+                  <flag>wxEXPAND</flag>
+                  <border>5</border>
+                  <cellpos>0,0</cellpos>
+                  <cellspan>1,1</cellspan>
+                  <object class="wxStaticBoxSizer" name="EntriesSettingsSection">
+                    <orient>wxVERTICAL</orient>
+                    <label>Entries</label>
+                    <object class="sizeritem">
+                      <flag>wxEXPAND</flag>
+                      <border>5</border>
+                      <option>1</option>
+                      <object class="wxFlexGridSizer" name="fgSizer1">
+                        <vgap>5</vgap>
+                        <hgap>3</hgap>
+                        <growablerows></growablerows>
+                        <growablecols></growablecols>
+                        <rows>2</rows>
+                        <cols>2</cols>
+                        <object class="sizeritem">
+                          <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                          <border>5</border>
+                          <option>0</option>
+                          <object class="wxStaticText" name="m_staticText3">
+                            <label>Entries DB Location: </label>
+                            <wrap>-1</wrap>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                          <border>5</border>
+                          <option>0</option>
+                          <object class="wxDirPickerCtrl" name="EntryDirPicker">
+                            <style>wxDIRP_DEFAULT_STYLE</style>
+                            <value></value>
+                            <message>Select a folder</message>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                          <border>5</border>
+                          <option>0</option>
+                          <object class="wxStaticText" name="m_staticText5">
+                            <label>Entry Grouping: </label>
+                            <wrap>-1</wrap>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <flag>wxALL</flag>
+                          <border>5</border>
+                          <option>0</option>
+                          <object class="wxChoice" name="EntryGroupingChoice">
+                            <style>wxCB_SORT</style>
+                            <selection>0</selection>
+                            <content/>
+                          </object>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                </object>
+                <object class="sizeritem">
+                  <flag>wxEXPAND</flag>
+                  <border>5</border>
+                  <cellpos>0,1</cellpos>
+                  <cellspan>1,1</cellspan>
+                  <object class="wxStaticBoxSizer" name="MiscSettingsSection">
+                    <orient>wxVERTICAL</orient>
+                    <label>Misc</label>
+                    <object class="sizeritem">
+                      <flag>wxEXPAND</flag>
+                      <border>5</border>
+                      <option>1</option>
+                      <object class="wxFlexGridSizer" name="fgSizer2">
+                        <vgap>5</vgap>
+                        <hgap>5</hgap>
+                        <growablerows></growablerows>
+                        <growablecols></growablecols>
+                        <rows>2</rows>
+                        <cols>2</cols>
+                        <object class="sizeritem">
+                          <flag>wxALL</flag>
+                          <border>5</border>
+                          <option>0</option>
+                          <object class="wxStaticText" name="m_staticText4">
+                            <label>Editor Font Size: </label>
+                            <wrap>-1</wrap>
+                          </object>
+                        </object>
+                        <object class="sizeritem">
+                          <flag>wxALL</flag>
+                          <border>5</border>
+                          <option>0</option>
+                          <object class="wxSpinCtrl" name="FontSpinner">
+                            <style>wxSP_ARROW_KEYS</style>
+                            <value>0</value>
+                            <min>0</min>
+                            <max>10</max>
+                          </object>
+                        </object>
+                      </object>
+                    </object>
+                  </object>
+                </object>
+                <object class="sizeritem">
+                  <flag>wxEXPAND</flag>
+                  <border>5</border>
+                  <cellpos>1,0</cellpos>
+                  <cellspan>1,2</cellspan>
+                  <object class="wxStdDialogButtonSizer" name="m_sdbSizer2">
+                    <object class="button">
+                      <object class="wxButton" name="wxID_SAVE"/>
+                    </object>
+                    <object class="button">
+                      <object class="wxButton" name="wxID_CANCEL"/>
+                    </object>
+                  </object>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+    <object class="wxStatusBar" name="StatusBar">
+      <style>wxSTB_SIZEGRIP</style>
+      <fields>1</fields>
+    </object>
+  </object>
+</resource>
