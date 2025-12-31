@@ -15,6 +15,10 @@ JournalFrame::JournalFrame()
     infoMenuItem = XRCCTRL(*this, "InfoSubItem", wxMenuItem);
 }
 
+JournalFrame::~JournalFrame()
+{
+}
+
 void JournalFrame::OnTabChanged(wxBookCtrlEvent &event)
 {
     int page = event.GetSelection();

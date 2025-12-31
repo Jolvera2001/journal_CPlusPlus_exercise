@@ -2,6 +2,7 @@
 #include <wx/wx.h>
 #include <wx/filepicker.h>
 #include <wx/xrc/xmlres.h>
+#include <wx/spinctrl.h>
 
 class EditorPanel
 {
