@@ -17,7 +17,8 @@ endif()
 include_directories(
     "${WXWIN}/include"
     "${WXWIN}/lib/vc_x64_lib/${WX_CONFIG}"
-    "${CMAKE_SOURCE_DIR}"
+    "${CMAKE_SOURCE_DIR}/include"
+    "${CMAKE_SOURCE_DIR}/assets"
 )
 
 link_directories("${WXWIN}/lib/vc_x64_lib")
@@ -25,10 +26,10 @@ link_directories("${WXWIN}/lib/vc_x64_lib")
 add_definitions(-D__WXMSW__ -DUNICODE -D_UNICODE)
 
 add_executable(journalApp WIN32 
-    main.cpp
-    JournalApp.cpp
-    JournalFrame.cpp
-    JournalPanels.cpp
+    src/main.cpp
+    src/JournalApp.cpp
+    src/JournalFrame.cpp
+    src/JournalPanels.cpp
 )
 
 target_link_libraries(journalApp
@@ -49,4 +50,4 @@ target_link_libraries(journalApp
     wsock32
 )
 
-configure_file(main.xrc ${CMAKE_BINARY_DIR}/main.xrc COPYONLY)
+configure_file(assets/main.xrc ${CMAKE_BINARY_DIR}/main.xrc COPYONLY)
