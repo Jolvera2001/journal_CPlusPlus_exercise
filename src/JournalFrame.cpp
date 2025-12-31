@@ -2,14 +2,13 @@
 #include "JournalPanels.h"
 #include <wx/notebook.h>
 
-JournalFrame::JournalFrame() : wxFrame(nullptr, wxID_ANY, "Hello world", wxDefaultPosition, wxSize(700, 500))
+JournalFrame::JournalFrame()
 {
-    auto notebook = new wxNotebook(this, wxID_ANY);
+    wxXmlResource::Get()->LoadFrame(this, nullptr, "MainFrame");
 
-    notebook->AddPage(new EditorPanel(notebook), "Editor", true);
-    notebook->AddPage(new SettingsPanel(notebook), "Settings");
-
-    notebook->Bind(wxEVT_NOTEBOOK_PAGE_CHANGED, &JournalFrame::OnTabChanged, this);
+    m_editorPanel = std::make_unique<EditorPanel>(this);
+    m_historyPanel = std::make_unique<HistoryPanel>(this);
+    m_settingsPanel = std::make_unique<SettingsPanel>(this);
 }
 
 void JournalFrame::OnTabChanged(wxBookCtrlEvent &event)
