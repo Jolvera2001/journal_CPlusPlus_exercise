@@ -1,18 +1,14 @@
 #include "JournalPanels.h"
 
-EditorPanel::EditorPanel(wxWindow *parent) : wxPanel(parent)
+EditorPanel::EditorPanel(wxWindow *frame)
 {
-    auto vBox = new wxBoxSizer(wxVERTICAL);
-    auto textCtrl = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE | wxTE_WORDWRAP);
-
-    vBox->Add(textCtrl, 1, wxEXPAND | wxALL, 5);
-
-    this->SetSizer(vBox);
+    titleEntry = XRCCTRL(*frame, "TitleEntry", wxTextCtrl);
+    contentEntry = XRCCTRL(*frame, "ContentEntry", wxTextCtrl);
 }
 
-SettingsPanel::SettingsPanel(wxWindow *parent) : wxPanel(parent)
+SettingsPanel::SettingsPanel(wxWindow *frame)
 {
-    auto vBox = new wxBoxSizer(wxVERTICAL);
-
-    this->SetSizer(vBox);
+    dirPicker = XRCCTRL(*frame, "EntryDirPicker", wxDirPickerCtrl);
+    entryGroupingChoice = XRCCTRL(*frame, "EntryGroupingChoice", wxChoice);
+    fontSizeSpinner = XRCCTRL(*frame, "FontSpinner", wxSpinCtrl);
 };

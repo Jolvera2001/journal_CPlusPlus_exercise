@@ -9,6 +9,10 @@ JournalFrame::JournalFrame()
     m_editorPanel = std::make_unique<EditorPanel>(this);
     m_historyPanel = std::make_unique<HistoryPanel>(this);
     m_settingsPanel = std::make_unique<SettingsPanel>(this);
+
+    helloWorldMenuItem = XRCCTRL(*this, "HelloWorldSubItem", wxMenuItem);
+    exitMenuItem = XRCCTRL(*this, "ExitSubItem", wxMenuItem);
+    infoMenuItem = XRCCTRL(*this, "InfoSubItem", wxMenuItem);
 }
 
 void JournalFrame::OnTabChanged(wxBookCtrlEvent &event)

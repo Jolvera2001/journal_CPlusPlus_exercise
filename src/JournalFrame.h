@@ -20,9 +20,7 @@ private:
     std::unique_ptr<HistoryPanel> m_historyPanel;
     std::unique_ptr<SettingsPanel> m_settingsPanel;
 
-    wxMenuItem* helloWorldMenuItem;
-    wxMenuItem* exitMenuItem;
-    wxMenuItem* infoMenuItem;
+    wxMenuItem *helloWorldMenuItem, *exitMenuItem, *infoMenuItem;
 
     void OnTabChanged(wxBookCtrlEvent &event);
 };

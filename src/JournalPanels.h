@@ -1,30 +1,32 @@
 #pragma once
 #include <wx/wx.h>
 #include <wx/filepicker.h>
+#include <wx/xrc/xmlres.h>
 
-class EditorPanel : public wxPanel
+class EditorPanel
 {
 public:
-    EditorPanel(wxWindow *parent);
+    EditorPanel(wxWindow *frame);
+
+    void Clear();
 
 private:
-    wxTextCtrl* titleEntry;
-    wxTextCtrl* contentEntry;
+    wxTextCtrl *titleEntry, *contentEntry;
 };
 
-class HistoryPanel : public wxPanel
+class HistoryPanel
 {
 public:
-    HistoryPanel(wxWindow *parent);
+    HistoryPanel(wxWindow *frame);
 };
 
-class SettingsPanel : public wxPanel
+class SettingsPanel
 {
 public:
-    SettingsPanel(wxWindow *parent);
+    SettingsPanel(wxWindow *frame);
 
 private:
-    wxDirPickerCtrl* dirPicker;
-    wxChoice* EnterCriticalSection;
-    wxSpinCtrl* fontSizeSpinner;
+    wxDirPickerCtrl *dirPicker;
+    wxChoice *entryGroupingChoice;
+    wxSpinCtrl *fontSizeSpinner;
 };
