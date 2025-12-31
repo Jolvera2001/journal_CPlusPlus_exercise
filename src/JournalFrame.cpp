@@ -6,7 +6,7 @@ JournalFrame::JournalFrame() : wxFrame(nullptr, wxID_ANY, "Hello world", wxDefau
 {
     auto notebook = new wxNotebook(this, wxID_ANY);
 
-    notebook->AddPage(new JournalPanel(notebook), "Editor", true);
+    notebook->AddPage(new EditorPanel(notebook), "Editor", true);
     notebook->AddPage(new SettingsPanel(notebook), "Settings");
 
     notebook->Bind(wxEVT_NOTEBOOK_PAGE_CHANGED, &JournalFrame::OnTabChanged, this);

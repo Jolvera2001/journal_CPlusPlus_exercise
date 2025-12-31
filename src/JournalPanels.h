@@ -1,10 +1,10 @@
 #pragma once
 #include <wx/wx.h>
 
-class JournalPanel : public wxPanel
+class EditorPanel : public wxPanel
 {
 public:
-    JournalPanel(wxWindow *parent);
+    EditorPanel(wxWindow *parent);
 };
 
 class SettingsPanel : public wxPanel

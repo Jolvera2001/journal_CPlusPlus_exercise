@@ -4,11 +4,13 @@
 
 bool JournalApp::OnInit()
 {
+    SetAppName("Journal");
     wxXmlResource::Get()->InitAllHandlers();
 
-    wxXmlResource::Get()->Load("Main.xrc");
-
-    SetAppName("Journal");
+    if (!wxXmlResource::Get()->Load("main.xrc")) {
+        wxLogError("Failed to get main.xrc");
+        return false;
+    }
 
     auto frame = new JournalFrame();
     frame->Show(true);
