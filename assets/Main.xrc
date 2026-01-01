@@ -3,7 +3,7 @@
   <object class="wxFrame" name="MainFrame">
     <size>900,600</size>
     <style>wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL</style>
-    <title></title>
+    <title>Journal App</title>
     <centered>1</centered>
     <aui_managed>0</aui_managed>
     <object class="wxMenuBar" name="MenuBar">

@@ -10,17 +10,24 @@ JournalFrame::JournalFrame()
     m_historyPanel = std::make_unique<HistoryPanel>(this);
     m_settingsPanel = std::make_unique<SettingsPanel>(this);
 
-    helloWorldMenuItem = XRCCTRL(*this, "HelloWorldSubItem", wxMenuItem);
-    exitMenuItem = XRCCTRL(*this, "ExitSubItem", wxMenuItem);
-    infoMenuItem = XRCCTRL(*this, "InfoSubItem", wxMenuItem);
+    Bind(wxEVT_MENU, [=](wxCommandEvent &)
+         { Close(true); }, XRCID("ExitSubItem"));
+    Bind(wxEVT_MENU, &JournalFrame::OnInfo, this, XRCID("InfoSubItem"));
+    Bind(wxEVT_MENU, &JournalFrame::OnHelloWorld, this, XRCID("HelloWorldSubItem"));
 }
 
 JournalFrame::~JournalFrame()
 {
 }
 
-void JournalFrame::OnTabChanged(wxBookCtrlEvent &event)
+void JournalFrame::OnHelloWorld(wxCommandEvent &event)
 {
-    int page = event.GetSelection();
-    wxLogMessage("Switched to tab %d", page);
+    wxMessageBox("Hello world! This was made using wxFormBuilder and c++!",
+                 "Enjoy your stay");
+};
+
+void JournalFrame::OnInfo(wxCommandEvent &event)
+{
+    wxMessageBox("This journal app is just a way for me to practice C++.",
+                 "Yippee", wxOK | wxICON_INFORMATION);
 }
