@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include "sqlite3.h"
 #include "JournalEntryModel.h"
 
@@ -12,4 +13,5 @@ public:
 
 private:
     sqlite3 *db;
+    std::string dbPath;
 };
