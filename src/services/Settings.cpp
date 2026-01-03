@@ -12,7 +12,9 @@ Settings::Settings()
 
 void Settings::SaveSettings()
 {
-    
+    json j = appSettings.ToJson();
+    std::ofstream file(this->settingsPath);
+    file << j.dump(4);
 }
 
 void Settings::LoadSettings() 
@@ -27,5 +29,7 @@ void Settings::LoadSettings()
 
         appSettings.dbPath = databaseLocation.string();
         appSettings.entryFontSize = 12;
+
+        SaveSettings();
     }
 }

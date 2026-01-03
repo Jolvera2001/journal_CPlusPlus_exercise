@@ -1,6 +1,6 @@
 #include "Database.h"
 
-Database::Database(std::string &dbPath)
+Database::Database(const std::string &dbPath)
 {
     const std::string dbName = "JournalEntries.db";
 
