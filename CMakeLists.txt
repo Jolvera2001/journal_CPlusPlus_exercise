@@ -14,15 +14,6 @@ else()
     set(WX_SUFFIX "")
 endif()
 
-include_directories(
-    "${WXWIN}/include"
-    "${WXWIN}/lib/vc_x64_lib/${WX_CONFIG}"
-    "${CMAKE_SOURCE_DIR}/include"
-    "${CMAKE_SOURCE_DIR}/assets"
-)
-
-link_directories("${WXWIN}/lib/vc_x64_lib")
-
 add_definitions(-D__WXMSW__ -DUNICODE -D_UNICODE)
 
 add_executable(journalApp WIN32 
@@ -32,7 +23,20 @@ add_executable(journalApp WIN32
     src/JournalPanels.cpp
 
     src/models/JournalEntryModel.h
+
+    external/sqlite3.h
+    external/sqlite3.c
 )
+
+target_include_directories(journalApp PRIVATE
+    "${WXWIN}/include"
+    "${WXWIN}/lib/vc_x64_lib/${WX_CONFIG}"
+    "${CMAKE_SOURCE_DIR}/include"
+    "${CMAKE_SOURCE_DIR}/assets"
+    "${CMAKE_SOURCE_DIR}/external"
+)
+
+target_link_directories(journalApp PRIVATE "${WXWIN}/lib/vc_x64_lib")
 
 target_link_libraries(journalApp
     wxmsw32u${WX_SUFFIX}_core

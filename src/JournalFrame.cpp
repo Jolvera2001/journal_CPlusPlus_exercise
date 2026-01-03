@@ -31,3 +31,10 @@ void JournalFrame::OnInfo(wxCommandEvent &event)
     wxMessageBox("This journal app is just a way for me to practice C++.",
                  "Yippee", wxOK | wxICON_INFORMATION);
 }
+
+// void LoadEntries(wxCommandEvent &event)
+// {
+//      load data when navigating to History page (probably 1)
+//      means it could be very simple to load entries
+//      maybe. The panel itself should have some method to accept a new list or something
+// }
