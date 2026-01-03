@@ -24,8 +24,9 @@ add_executable(journalApp WIN32
 
     src/models/JournalEntryModel.h
 
-    external/sqlite3.h
     external/sqlite3.c
+    external/sqlite3.h
+    external/json.hpp
 )
 
 target_include_directories(journalApp PRIVATE
