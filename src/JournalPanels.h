@@ -13,6 +13,10 @@ public:
 
 private:
     wxTextCtrl *titleEntry, *contentEntry;
+    wxButton *saveButton, *clearButton;
+
+    void OnSave(wxCommandEvent &event);
+    void OnClear(wxCommandEvent &event);
 };
 
 class HistoryPanel

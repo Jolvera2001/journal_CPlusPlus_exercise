@@ -115,7 +115,41 @@
         <object class="wxPanel" name="HistoryPanel">
           <style>wxTAB_TRAVERSAL</style>
           <object class="wxBoxSizer" name="HistorySizer">
-            <orient>wxVERTICAL</orient>
+            <orient>wxHORIZONTAL</orient>
+            <object class="sizeritem">
+              <flag>wxEXPAND</flag>
+              <border>5</border>
+              <option>2</option>
+              <object class="wxBoxSizer" name="bSizer10">
+                <orient>wxVERTICAL</orient>
+                <object class="sizeritem">
+                  <flag>wxEXPAND | wxALL</flag>
+                  <border>5</border>
+                  <option>1</option>
+                  <object class="wxPanel" name="m_panel4">
+                    <style>wxTAB_TRAVERSAL</style>
+                  </object>
+                </object>
+              </object>
+            </object>
+            <object class="sizeritem">
+              <flag>wxALL|wxEXPAND</flag>
+              <border>5</border>
+              <option>8</option>
+              <object class="wxBoxSizer" name="bSizer11">
+                <orient>wxVERTICAL</orient>
+                <object class="sizeritem">
+                  <flag>wxALL|wxEXPAND</flag>
+                  <border>5</border>
+                  <option>8</option>
+                  <object class="wxTextCtrl" name="m_textCtrl3">
+                    <style>wxTE_MULTILINE|wxTE_READONLY|wxTE_WORDWRAP</style>
+                    <value></value>
+                    <maxlength>0</maxlength>
+                  </object>
+                </object>
+              </object>
+            </object>
           </object>
         </object>
       </object>
@@ -244,12 +278,43 @@
                   <border>5</border>
                   <cellpos>1,0</cellpos>
                   <cellspan>1,2</cellspan>
-                  <object class="wxStdDialogButtonSizer" name="m_sdbSizer2">
-                    <object class="button">
-                      <object class="wxButton" name="wxID_SAVE"/>
+                  <object class="wxBoxSizer" name="bSizer8">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="sizeritem">
+                      <flag>wxALL</flag>
+                      <border>5</border>
+                      <option>0</option>
+                      <object class="wxButton" name="SettingsSaveButton">
+                        <label>Save</label>
+                        <default>0</default>
+                        <auth_needed>0</auth_needed>
+                        <markup>0</markup>
+                        <bitmap/>
+                      </object>
                     </object>
-                    <object class="button">
-                      <object class="wxButton" name="wxID_CANCEL"/>
+                    <object class="sizeritem">
+                      <flag>wxALL</flag>
+                      <border>5</border>
+                      <option>0</option>
+                      <object class="wxButton" name="SettingsClearButton">
+                        <label>Clear Changes</label>
+                        <default>0</default>
+                        <auth_needed>0</auth_needed>
+                        <markup>0</markup>
+                        <bitmap/>
+                      </object>
+                    </object>
+                    <object class="sizeritem">
+                      <flag>wxALL</flag>
+                      <border>5</border>
+                      <option>0</option>
+                      <object class="wxButton" name="SettingsResetButton">
+                        <label>Reset</label>
+                        <default>0</default>
+                        <auth_needed>0</auth_needed>
+                        <markup>0</markup>
+                        <bitmap/>
+                      </object>
                     </object>
                   </object>
                 </object>
