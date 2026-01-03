@@ -6,7 +6,13 @@
 class Database
 {
 public:
-    Database();
+    Database(std::string &dbPath);
+    ~Database();
+
+    Database(const Database&) = delete;
+    Database& operator=(const Database&) = delete;
+
+    sqlite3* GetHandle() { return db; }
     int FindEntries();
     int SaveEntry(JournalEntry &newEntry);
     int UpdateEntry(int id, JournalEntry &newEntry);
