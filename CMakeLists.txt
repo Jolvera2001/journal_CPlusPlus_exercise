@@ -30,6 +30,8 @@ add_executable(journalApp WIN32
     src/JournalApp.cpp
     src/JournalFrame.cpp
     src/JournalPanels.cpp
+
+    src/models/JournalEntryModel.h
 )
 
 target_link_libraries(journalApp
