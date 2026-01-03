@@ -26,6 +26,50 @@ Database::~Database()
     }
 };
 
+std::vector<JournalEntry> Database::FindEntries()
+{
+
+    const char *sql =
+        "SELECT * FROM entries;";
+    std::vector<JournalEntry> entries;
+    sqlite3_stmt *stmt;
+
+    int rc = sqlite3_prepare_v2(this->db, sql, -1, &stmt, nullptr);
+    if (rc != SQLITE_OK)
+    {
+        // put somethere here for error
+        return entries;
+    }
+
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        JournalEntry entry;
+
+        entry.id = sqlite3_column_int(stmt, 0);
+
+        wxDateTime createdTime;
+        auto createdTimeStr = GetColumnText(stmt, 1);
+        createdTime.ParseISOCombined(createdTimeStr);
+        entry.createdAt = createdTime;
+
+        wxDateTime updatedTime;
+        auto updatedTimeStr = GetColumnText(stmt, 2);
+        updatedTime.ParseISOCombined(updatedTimeStr);
+        entry.updatedAt = updatedTime;
+
+        auto titleStr = GetColumnText(stmt, 3);
+        entry.title = wxString(titleStr);
+
+        auto contentStr = GetColumnText(stmt, 4);
+        entry.content = wxString(contentStr);
+
+        entries.push_back(entry);
+    }
+
+    sqlite3_finalize(stmt);
+
+    return entries;
+}
+
 void Database::InitializeTables()
 {
     const char *sql =
@@ -44,4 +88,9 @@ void Database::InitializeTables()
     {
         sqlite3_free(errMsg);
     }
+}
+
+std::string GetColumnText(sqlite3_stmt *stmt, int col) {
+    const unsigned char *text = sqlite3_column_text(stmt, col);
+    return text ? std::string(reinterpret_cast<const char*>(text)) : "";
 }

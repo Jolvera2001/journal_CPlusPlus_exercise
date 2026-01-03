@@ -7,6 +7,6 @@ struct JournalEntry
     int id;
     wxDateTime createdAt;
     wxDateTime updatedAt;
-    std::string title;
-    std::string content;
+    wxString title;
+    wxString content;
 };

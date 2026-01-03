@@ -16,9 +16,10 @@ public:
     Database &operator=(const Database &) = delete;
 
     sqlite3 *GetHandle() { return db; }
-    int FindEntries();
-    int SaveEntry(JournalEntry &newEntry);
-    int UpdateEntry(int id, JournalEntry &newEntry);
+    std::vector<JournalEntry> FindEntries();
+    void SaveEntry(JournalEntry &newEntry);
+    void UpdateEntry(int id, JournalEntry &newEntry);
+    void DelelteEntry(int id);
 
 private:
     sqlite3 *db;
