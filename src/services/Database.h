@@ -2,14 +2,14 @@
 #include <string>
 #include <filesystem>
 #include "sqlite3.h"
-#include "JournalEntryModel.h"
+#include "../models/JournalEntryModel.h"
 
 namespace fs = std::filesystem;
 
 class Database
 {
 public:
-    Database(std::string &dbPath);
+    Database(const std::string &dbPath);
     ~Database();
 
     Database(const Database &) = delete;

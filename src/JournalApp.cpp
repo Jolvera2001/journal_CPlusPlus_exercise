@@ -4,7 +4,7 @@
 
 bool JournalApp::OnInit()
 {
-    SetAppName("Journal");
+    SetAppName("JournalApp");
     wxXmlResource::Get()->InitAllHandlers();
 
     if (!wxXmlResource::Get()->Load("main.xrc")) {

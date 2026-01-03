@@ -1,9 +1,11 @@
 #include "JournalFrame.h"
 #include "JournalPanels.h"
-#include <wx/notebook.h>
 
 JournalFrame::JournalFrame()
+    : settings()
 {
+    this->database = std::make_unique<Database>(GetDatabasePath());
+
     wxXmlResource::Get()->LoadFrame(this, nullptr, "MainFrame");
 
     m_editorPanel = std::make_unique<EditorPanel>(this);
@@ -18,6 +20,12 @@ JournalFrame::JournalFrame()
 
 JournalFrame::~JournalFrame()
 {
+}
+
+std::string JournalFrame::GetDatabasePath()
+{
+    std::string appDataDir = wxStandardPaths::Get().GetUserDataDir().ToStdString();
+    return appDataDir;
 }
 
 void JournalFrame::OnHelloWorld(wxCommandEvent &event)
