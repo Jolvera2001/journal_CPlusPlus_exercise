@@ -18,8 +18,8 @@ public:
     sqlite3 *GetHandle() { return db; }
     std::vector<JournalEntry> FindEntries();
     void SaveEntry(JournalEntry &newEntry);
-    void UpdateEntry(int id, JournalEntry &newEntry);
-    void DelelteEntry(int id);
+    void UpdateEntry(int id, JournalEntry &updatedEntry);
+    void DeleteEntry(int id);
 
 private:
     sqlite3 *db;

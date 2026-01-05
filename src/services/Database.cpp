@@ -28,7 +28,6 @@ Database::~Database()
 
 std::vector<JournalEntry> Database::FindEntries()
 {
-
     const char *sql =
         "SELECT * FROM entries;";
     std::vector<JournalEntry> entries;
@@ -68,6 +67,27 @@ std::vector<JournalEntry> Database::FindEntries()
     sqlite3_finalize(stmt);
 
     return entries;
+}
+
+void SaveEntry(JournalEntry &newEntry) 
+{
+    const char *sql =
+    "INSERT INTO entries (created_at, updated_at, title, content)"
+    "VALUES (?, ?, ?, ?)";
+    sqlite3_stmt *stmt;
+}
+
+void UpdateEntry(int id, JournalEntry &updatedEntry)
+{
+    const char *sql = 
+    "UPDATE entries SET updated_at = ? title = ? content = ?"
+    "WHERE id = ?";
+    sqlite3_stmt *stmt;
+}
+
+void DeleteEntry(int id)
+{
+
 }
 
 void Database::InitializeTables()
